@@ -34,8 +34,8 @@ class RegistrationFormPage:
     def choose_subject(self, value):
         browser.element("#subjectsInput").type(value).press_enter()
 
-    def choose_hobby(self, value):
-        browser.all('.custom-checkbox').element_by(have.exact_text(value)).click()
+    def choose_hobby(self):
+        browser.element('label[for="hobbies-checkbox-1"]').click()
 
     def choose_photo(self, value):
         browser.element("#uploadPicture").set_value(os.path.abspath(f'resources/{value}'))

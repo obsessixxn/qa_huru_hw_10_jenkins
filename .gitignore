@@ -5,7 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
+#allure
 
+tests/allure-results
 
 #idea
 .idea

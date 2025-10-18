@@ -1,15 +1,13 @@
 import os
 import time
 
-from selene import browser, have, be
+from selene import browser
 from selene.support.shared import browser
-from selene.support.conditions import be
-
 
 from tests.pages.registration_form import RegistrationFormPage
 
 
-def test_sending_form(setup_firefox):
+def test_sending_form(in_browser):
     register_page = RegistrationFormPage()
     register_page.open()
     register_page.fill_name("Daniil")
@@ -19,7 +17,7 @@ def test_sending_form(setup_firefox):
     register_page.fill_number("3123131232")
     register_page.fill_date_of_birth('2002', 'May', '11')
     register_page.choose_subject("Computer Science")
-    register_page.choose_hobby('Reading')
+    register_page.choose_hobby()
     register_page.choose_photo('123123.png')
     register_page.fill_address('Moskva, street 10')
     register_page.choose_state('NCR')
@@ -32,7 +30,7 @@ def test_sending_form(setup_firefox):
         "3123131232",
         "11 May,2002",
         'Computer Science',
-        'Reading',
+        'Sports',
         '123123.png',
         'Moskva, street 10',
         'NCR',
