@@ -5,6 +5,9 @@ from selene import browser, have
 
 class RegistrationFormPage:
 
+    def __init__(self):
+        pass
+
     def open(self):
         browser.open('https://demoqa.com/automation-practice-form')
 
