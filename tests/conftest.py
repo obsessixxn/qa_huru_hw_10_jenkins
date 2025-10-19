@@ -9,6 +9,5 @@ def in_browser():
     browser.config.window_height = 1080
     browser.config.base_url = 'https://demoqa.com'
 
-    yield
+    yield browser
 
-    browser.quit()
