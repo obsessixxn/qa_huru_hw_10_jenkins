@@ -10,6 +10,7 @@ from utils import attach
 def in_browser():
     options = webdriver.ChromeOptions()
     options.add_argument("--window-size=1920,1080")
+    Browser.config.timeout = 10
 
     selenoid_capabilities = {
         "browserName": "chrome",
