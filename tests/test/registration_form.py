@@ -2,64 +2,66 @@ import os
 
 from selene import browser, have
 
+from tests.test.conftest import in_browser
+
 
 class RegistrationFormPage:
 
-    def __init__(self):
-        pass
+    def __init__(self, in_browser):
+        self.browser = in_browser
 
     def open(self, value):
-        browser.open(value)
+        self.browser.open(value)
 
     def fill_name(self, name):
-        browser.element("#firstName").type(name)
+        self.browser.element("#firstName").type(name)
 
     def fill_surname(self, name):
-        browser.element("#lastName").type(name)
+        self.browser.element("#lastName").type(name)
 
     def fill_email(self, email):
-        browser.element("#userEmail").type(email)
+        self.browser.element("#userEmail").type(email)
 
     def choose_gender(self, value):
-        browser.element(f'[for="gender-radio-{value}"]').click()
+        self.browser.element(f'[for="gender-radio-{value}"]').click()
 
     def fill_number(self, value):
-        browser.element("#userNumber").type(value)
+        self.browser.element("#userNumber").type(value)
 
     def fill_date_of_birth(self, year, month, day):
-        browser.element('#dateOfBirthInput').click()
-        browser.element('.react-datepicker__month-select').type(month)
-        browser.element('.react-datepicker__year-select').type(year)
-        browser.element(
+        self.browser.element('#dateOfBirthInput').click()
+        self.browser.element('.react-datepicker__month-select').type(month)
+        self.browser.element('.react-datepicker__year-select').type(year)
+        self.browser.element(
             f'.react-datepicker__day--0{day}:not(.react-datepicker__day--outside-month)'
         ).click()
 
     def choose_subject(self, value):
-        browser.element("#subjectsInput").type(value).press_enter()
+        self.browser.element("#subjectsInput").type(value).press_enter()
 
     def choose_hobby(self):
-        browser.element('label[for="hobbies-checkbox-1"]').click()
+        self.browser.element('label[for="hobbies-checkbox-1"]').click()
 
     def choose_photo(self, value):
-        browser.element("#uploadPicture").set_value(os.path.abspath(f'resources/{value}'))
+        self.browser.element("#uploadPicture").set_value(os.path.abspath(f'./img/{value}'))
 
     def fill_address(self, value):
-        browser.element('#currentAddress').type(value)
+        self.browser.element('#currentAddress').type(value)
 
     def choose_state(self, value):
-        browser.element('#state').click()
-        browser.all('div[class*="option"]').element_by(have.text(value)).click()
+        self.browser.element('#state').click()
+        self.browser.all('div[class*="option"]').element_by(have.text(value)).click()
 
     def choose_city(self, value):
-        browser.element('#city').click()
-        browser.all('div[class*="option"]').element_by(have.text(value)).click()
+        self.browser.element('#city').click()
+        self.browser.all('div[class*="option"]').element_by(have.text(value)).click()
 
     def submit_form(self):
-        browser.element('#submit').click()
+        self.browser.element('#submit').click()
 
     def should_registered_student_with(self, full_name, email, gender, number, date_of_birth,
                                        subject, hobby, photo, address, state, city):
-        browser.element('.table').all('td').even.should(have.texts([
+        self.browser.element('.table').all('td').even.should(have.texts([
             full_name,
             email,
             gender,
