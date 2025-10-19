@@ -33,6 +33,7 @@ def in_browser():
             window_height=1080,
         )
     )
+    browser.driver.set_window_size(1920, 1080)
     yield browser
 
     attach.add_screenshot(browser)
