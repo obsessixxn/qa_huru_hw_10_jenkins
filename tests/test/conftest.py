@@ -1,3 +1,5 @@
+import tempfile
+
 import pytest
 from selene import browser
 from selenium import webdriver
@@ -14,5 +16,8 @@ def in_browser():
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 
-    yield browser
+    browser.config.driver = webdriver.Chrome(options=options)
+
+
