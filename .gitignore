@@ -7,7 +7,7 @@ __pycache__/
 *.so
 #allure
 
-tests/allure-results
+tests/test/allure-results
 
 #idea
 .idea
