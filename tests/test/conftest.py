@@ -3,6 +3,7 @@ import tempfile
 import pytest
 from selene import Config, Browser
 from selenium import webdriver
+from utils import attach
 
 
 @pytest.fixture(scope='session')
@@ -41,5 +42,9 @@ def in_browser():
     )
 
     yield browser
+
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
 
     browser.quit()
