@@ -1,9 +1,6 @@
 import os
 import time
 
-from selene import browser, have
-from selene.support.shared import browser
-
 from registration_form import RegistrationFormPage
 
 

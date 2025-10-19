@@ -1,8 +1,8 @@
 import os
 
-from selene import browser, have
+from selene import have
 
-from tests.test.conftest import in_browser
+from conftest import in_browser
 
 
 class RegistrationFormPage:
