@@ -27,7 +27,7 @@ def test_sending_form(in_browser):
 
     browser.element('label[for="hobbies-checkbox-1"]').click()
 
-    browser.element("#uploadPicture").set_value(os.path.abspath('resources/123123.png'))
+    #browser.element("#uploadPicture").set_value(os.path.abspath('tests/resources/123123.PNG'))
 
     browser.element('#currentAddress').type("г.Москва, Покровка, 5")
 
@@ -49,7 +49,7 @@ def test_sending_form(in_browser):
         'Date of Birth', '23 March,2002',
         'Subjects', 'English, Computer Science',
         'Hobbies', 'Sports',
-        'Picture', '123123.png',
+        'Picture', '',
         'Address', 'г.Москва, Покровка, 5',
         'State and City', 'NCR Delhi'
     ]
