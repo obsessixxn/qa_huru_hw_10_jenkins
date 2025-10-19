@@ -28,7 +28,9 @@ def in_browser():
     browser = Browser(
         Config(
             driver=driver,
-            timeout=10
+            timeout=10,
+            window_width=1920,
+            window_height=1080,
         )
     )
     yield browser
