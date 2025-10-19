@@ -18,6 +18,6 @@ def in_browser():
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 
-    browser.config.driver = webdriver.Chrome(options=options)
+    # browser.config.driver = webdriver.Chrome(options=options)
 
 
