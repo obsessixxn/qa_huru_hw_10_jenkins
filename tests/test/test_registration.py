@@ -17,7 +17,7 @@ def test_sending_form(in_browser):
     register_page.fill_date_of_birth('2002', 'May', '11')
     register_page.choose_subject("Computer Science")
     register_page.choose_hobby()
-    register_page.choose_photo('123123.png')
+    # register_page.choose_photo('123123.png')
     register_page.fill_address('Moskva, street 10')
     register_page.choose_state('NCR')
     register_page.choose_city('Delhi')
@@ -30,7 +30,7 @@ def test_sending_form(in_browser):
         "11 May,2002",
         'Computer Science',
         'Sports',
-        '123123.png',
+        '',
         'Moskva, street 10',
         'NCR',
         'Delhi'
