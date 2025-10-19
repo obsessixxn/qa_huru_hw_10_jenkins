@@ -1,7 +1,7 @@
 import tempfile
 
 import pytest
-from selene import browser, Config
+from selene import browser, Config, Browser
 from selenium import webdriver
 
 
@@ -18,12 +18,14 @@ def in_browser():
 
     driver = webdriver.Chrome(options=options)
 
-    browser.config = Config(
-        driver=driver,
-        base_url="https://demoqa.com",
-        timeout=6,
-        window_width=1920,
-        window_height=1080,
+    browser = Browser(
+        Config(
+            driver=driver,
+            base_url="https://demoqa.com",
+            timeout=6,
+            window_width=1920,
+            window_height=1080,
+        )
     )
 
     yield browser
