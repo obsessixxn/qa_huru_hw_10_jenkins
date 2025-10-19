@@ -28,6 +28,7 @@ def test_sending_form(in_browser):
     with allure.step("sending form"):
         register_page.submit_form()
     with allure.step("check if registration form is working"):
+        time.sleep(2)
         register_page.should_registered_student_with(
             "Daniil Zhuravlev",
             "butmanovich@yandex.ru",
@@ -41,5 +42,5 @@ def test_sending_form(in_browser):
             'NCR',
             'Delhi'
         )
-        time.sleep(3)
+        time.sleep(2)
         browser.element('#closeLargeModal').click()
