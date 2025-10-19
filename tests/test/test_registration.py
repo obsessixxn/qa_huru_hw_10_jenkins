@@ -41,6 +41,5 @@ def test_sending_form(in_browser):
             'NCR',
             'Delhi'
         )
-
+        time.sleep(3)
         browser.element('#closeLargeModal').click()
-        time.sleep(2)
