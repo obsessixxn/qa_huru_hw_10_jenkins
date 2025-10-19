@@ -7,6 +7,8 @@ from registration_form import RegistrationFormPage
 
 
 def test_sending_form(in_browser):
+    browser = in_browser
+
     register_page = RegistrationFormPage()
     register_page.open()
     register_page.fill_name("Daniil")
