@@ -9,7 +9,7 @@ def test_sending_form(in_browser):
 
     register_page = RegistrationFormPage(in_browser)
     with allure.step("open registration page"):
-        register_page.open("/automation-practice-form")
+        register_page.open("https://demoqa.com/automation-practice-form")
     with allure.step("filling personal information"):
         register_page.fill_name("Daniil")
         register_page.fill_surname("Zhuravlev")
