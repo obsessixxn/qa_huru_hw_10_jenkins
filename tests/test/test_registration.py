@@ -3,7 +3,7 @@ import time
 from selene import browser
 from selene.support.shared import browser
 
-from tests.test.registration_form import RegistrationFormPage
+from registration_form import RegistrationFormPage
 
 
 def test_sending_form(in_browser):
