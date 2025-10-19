@@ -1,7 +1,7 @@
 import tempfile
 
 import pytest
-from selene import Config, Browser
+from selene import browser, Config, Browser
 from selenium import webdriver
 from utils import attach
 
@@ -10,7 +10,6 @@ from utils import attach
 def in_browser():
     options = webdriver.ChromeOptions()
     options.add_argument("--window-size=1920,1080")
-    Browser.config.timeout = 10
 
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -29,9 +28,9 @@ def in_browser():
     browser = Browser(
         Config(
             driver=driver,
+            timeout=10
         )
     )
-
     yield browser
 
     attach.add_screenshot(browser)
