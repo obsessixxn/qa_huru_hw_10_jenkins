@@ -9,7 +9,7 @@ from registration_form import RegistrationFormPage
 def test_sending_form(in_browser):
 
     register_page = RegistrationFormPage()
-    register_page.open()
+    register_page.open("https://demoqa.com/automation-practice-form")
     register_page.fill_name("Daniil")
     register_page.fill_surname("Zhuravlev")
     register_page.fill_email("butmanovich@yandex.ru")
